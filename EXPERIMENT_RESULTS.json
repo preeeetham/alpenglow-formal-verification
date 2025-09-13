@@ -1,0 +1,127 @@
+{
+  "timestamp": "2025-09-13 18:17:55",
+  "summary": {
+    "total_tests": 12,
+    "successful_tests": 0,
+    "success_rate": 0.0,
+    "overall_status": "FAIL"
+  },
+  "results": {
+    "syntax_validation": {
+      "specs/tlaplus/AlpenglowConsensus.tla": {
+        "success": false,
+        "runtime": 0.01452493667602539,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "specs/tlaplus/Votor.tla": {
+        "success": false,
+        "runtime": 0.010799884796142578,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "specs/tlaplus/Rotor.tla": {
+        "success": false,
+        "runtime": 0.012082099914550781,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "specs/tlaplus/Properties.tla": {
+        "success": false,
+        "runtime": 0.010755777359008789,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "proofs/safety/SafetyProofs.tla": {
+        "success": false,
+        "runtime": 0.010557889938354492,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "proofs/liveness/LivenessProofs.tla": {
+        "success": false,
+        "runtime": 0.010516881942749023,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "proofs/resilience/ByzantineProofs.tla": {
+        "success": false,
+        "runtime": 0.010935783386230469,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "model-checking/small-config/AlpenglowConsensus.tla": {
+        "success": false,
+        "runtime": 0.011217117309570312,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "model-checking/small-config/MinimalAlpenglow.tla": {
+        "success": false,
+        "runtime": 0.010998010635375977,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "model-checking/statistical/LargeScaleConfig.tla": {
+        "success": false,
+        "runtime": 0.011152029037475586,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      }
+    },
+    "small_scale": {
+      "minimal": {
+        "success": false,
+        "runtime": 0.011574983596801758,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      },
+      "consensus": {
+        "success": false,
+        "runtime": 0.011275053024291992,
+        "stdout": "",
+        "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+        "returncode": 1
+      }
+    },
+    "benchmarks": {
+      "success": false,
+      "runtime": 1.3532500267028809,
+      "stdout": "\ud83d\ude80 Starting Alpenglow Consensus Performance Benchmark\n============================================================\n\ud83d\udd2c Benchmarking Small Configuration Model Checking...\n  Running MinimalAlpenglow.tla...\n    States: 0\n    Runtime: 0.0s\n    Throughput: 0 states/sec\n  Running AlpenglowConsensus.tla...\n    States: 0\n    Runtime: 0.0s\n    Throughput: 0 states/sec\n\ud83d\udcca Generating Performance Report...\n\ud83d\udcc8 Analyzing Scalability...\n  Testing 3 nodes...\n  Testing 4 nodes...\n  Testing 5 nodes...\n  Testing 6 nodes...\n\ud83d\udcbe Analyzing Memory Usage...\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/preet/Developer/alpenglow-formal-verification/experiments/benchmarks/PerformanceAnalysis.py\", line 281, in <module>\n    main()\n  File \"/Users/preet/Developer/alpenglow-formal-verification/experiments/benchmarks/PerformanceAnalysis.py\", line 266, in main\n    report = benchmark.generate_report()\n  File \"/Users/preet/Developer/alpenglow-formal-verification/experiments/benchmarks/PerformanceAnalysis.py\", line 202, in generate_report\n    json.dump(report, f, indent=2)\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py\", line 431, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py\", line 405, in _iterencode_dict\n    yield from chunks\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py\", line 438, in _iterencode\n    o = _default(o)\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py\", line 179, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type int64 is not JSON serializable\n",
+      "returncode": 1
+    },
+    "counterexamples": {
+      "success": true,
+      "runtime": 0.6405456066131592,
+      "stdout": "\ud83d\udd0d Starting Alpenglow Counterexample Analysis\n==================================================\n\ud83e\uddea Running Counterexample Tests...\n\ud83e\uddea Creating Failing Specifications for Testing...\n  Created failing specifications in /Users/preet/Developer/alpenglow-formal-verification/experiments/counterexamples/failing_specs\n\ud83d\udd0d Generating counterexample for Safety...\n  No counterexample found for Safety\n\ud83d\udccb Generating Counterexample Analysis Report...\n\ud83d\udd12 Analyzing Safety Violations...\n  No safety violations found\n\ud83d\udcca Counterexample report saved to /Users/preet/Developer/alpenglow-formal-verification/experiments/counterexamples/counterexample_analysis.json\n\n\ud83d\udcca COUNTEREXAMPLE ANALYSIS SUMMARY\n========================================\nCounterexamples Found: 0\nProperties Tested: \nAvg Trace Length: 0.0\n\n\u2705 Counterexample Analysis Complete!\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    "statistical": {
+      "success": true,
+      "runtime": 10.46544098854065,
+      "stdout": "\ud83d\udcca Starting Alpenglow Statistical Analysis\n==================================================\n\ud83c\udfb2 Running Monte Carlo Statistical Analysis...\n  Testing 10 nodes...\n    Byzantine: 1, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 2, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 2, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 2, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n  Testing 20 nodes...\n    Byzantine: 1, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 2\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 2, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 2, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 2, Crashed: 2\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 3, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 3, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 3, Crashed: 2\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 4, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 4, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 4, Crashed: 2\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n  Testing 30 nodes...\n    Byzantine: 1, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 1, Crashed: 3\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 3, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 3, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 3, Crashed: 3\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 4, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 4, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 4, Crashed: 3\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 6, Crashed: 0\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 6, Crashed: 1\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n    Byzantine: 6, Crashed: 3\n      Sample 0/20\n      Sample 10/20\n      \u274c All 20 samples failed\n\ud83d\udcca Generating Statistical Analysis Report...\n\ud83d\udee1\ufe0f  Analyzing Byzantine Fault Tolerance...\n\ud83d\udccb Statistical report saved to /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/statistical_analysis.json\n\ud83d\udcc8 Creating Byzantine Tolerance Visualization...\n\ud83d\udee1\ufe0f  Analyzing Byzantine Fault Tolerance...\n  No data to visualize\n\n\ud83d\udcca STATISTICAL ANALYSIS SUMMARY\n========================================\nTotal Simulations: 660\nSuccess Rate: 0.0%\nAvg States Explored: 0\nAvg Runtime: 0.0s\n\n\u2705 Statistical Analysis Complete!\n",
+      "stderr": "",
+      "returncode": 0
+    },
+    "large_scale": {
+      "success": false,
+      "runtime": 0.011085987091064453,
+      "stdout": "",
+      "stderr": "The operation couldn\u2019t be completed. Unable to locate a Java Runtime.\nPlease visit http://www.java.com for information on installing Java.\n\n",
+      "returncode": 1
+    }
+  }
+}
