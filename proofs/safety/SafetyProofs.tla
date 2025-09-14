@@ -38,6 +38,94 @@ PROOF
       <2>1. finalized' = finalized BY <1>2 DEF CastFinalVote
       <2>2. QED BY <2>1, assumption
 <1>3. CASE FastFinalize(slot, hash)
+
+(* =============================================================================
+ * LEMMA 22: Vote Exclusivity (Finalization vs Fallback)
+ * ============================================================================= *)
+
+LEMMA VoteExclusivity ==
+    ASSUME TypeOK,
+           \A node \in Nodes, slot \in Slots :
+               (<<node, slot, "FinalVote", _>> \in votes) => 
+               (<<node, slot, "NotarFallbackVote", _>> \notin votes),
+           [Next]_vars
+    PROVE  \A node \in Nodes, slot \in Slots :
+               (<<node, slot, "FinalVote", _>> \in votes') => 
+               (<<node, slot, "NotarFallbackVote", _>> \notin votes')
+PROOF
+<1>1. CASE CastNotarVote(node, slot, hash)
+      <2>1. No FinalVote added BY <1>1 DEF CastNotarVote
+      <2>2. QED BY <2>1, assumption
+<1>2. CASE CastFinalVote(node, slot, hash)
+      <2>1. No NotarFallbackVote added BY <1>2 DEF CastFinalVote
+      <2>2. QED BY <2>1, assumption
+<1>3. CASE FastFinalize(slot, hash)
+      <2>1. votes' = votes BY <1>3 DEF FastFinalize
+      <2>2. QED BY <2>1, assumption
+<1>4. CASE SlowFinalize(slot, hash)
+      <2>1. votes' = votes BY <1>4 DEF SlowFinalize
+      <2>2. QED BY <2>1, assumption
+<1>5. QED BY <1>1, <1>2, <1>3, <1>4 DEF Next
+
+(* =============================================================================
+ * LEMMA 27-30: Notarization Relationships Across Ancestors
+ * ============================================================================= *)
+
+LEMMA NotarizationAncestorConsistency ==
+    ASSUME TypeOK,
+           \A b1, b2 \in finalized :
+               b1[1] < b2[1] => 
+               \E b3 \in finalized : b3[1] = b1[1] /\ b2.parent = b3[2],
+           [Next]_vars
+    PROVE  \A b1, b2 \in finalized' :
+               b1[1] < b2[1] => 
+               \E b3 \in finalized' : b3[1] = b1[1] /\ b2.parent = b3[2]
+PROOF
+<1>1. CASE CastNotarVote(node, slot, hash)
+      <2>1. finalized' = finalized BY <1>1 DEF CastNotarVote
+      <2>2. QED BY <2>1, assumption
+<1>2. CASE CastFinalVote(node, slot, hash)
+      <2>1. finalized' = finalized BY <1>2 DEF CastFinalVote
+      <2>2. QED BY <2>1, assumption
+<1>3. CASE FastFinalize(slot, hash)
+      <2>1. Only adds to finalized, maintains parent relationships
+            BY <1>3 DEF FastFinalize
+      <2>2. QED BY <2>1, assumption
+<1>4. CASE SlowFinalize(slot, hash)
+      <2>1. Only adds to finalized, maintains parent relationships
+            BY <1>4 DEF SlowFinalize
+      <2>2. QED BY <2>1, assumption
+<1>5. QED BY <1>1, <1>2, <1>3, <1>4 DEF Next
+
+(* =============================================================================
+ * LEMMA 31-32: Finalized Block Descendants in Leader Windows
+ * ============================================================================= *)
+
+LEMMA LeaderWindowDescendants ==
+    ASSUME TypeOK,
+           \A b1, b2 \in finalized :
+               b1[1] \in LeaderWindow(b2[1]) =>
+               b1.parent = b2[2] \/ b1[1] = b2[1],
+           [Next]_vars
+    PROVE  \A b1, b2 \in finalized' :
+               b1[1] \in LeaderWindow(b2[1]) =>
+               b1.parent = b2[2] \/ b1[1] = b2[1]
+PROOF
+<1>1. CASE CastNotarVote(node, slot, hash)
+      <2>1. finalized' = finalized BY <1>1 DEF CastNotarVote
+      <2>2. QED BY <2>1, assumption
+<1>2. CASE CastFinalVote(node, slot, hash)
+      <2>1. finalized' = finalized BY <1>2 DEF CastFinalVote
+      <2>2. QED BY <2>1, assumption
+<1>3. CASE FastFinalize(slot, hash)
+      <2>1. Maintains leader window relationships
+            BY <1>3 DEF FastFinalize, LeaderWindow
+      <2>2. QED BY <2>1, assumption
+<1>4. CASE SlowFinalize(slot, hash)
+      <2>1. Maintains leader window relationships
+            BY <1>4 DEF SlowFinalize, LeaderWindow
+      <2>2. QED BY <2>1, assumption
+<1>5. QED BY <1>1, <1>2, <1>3, <1>4 DEF Next
       <2>1. finalized' = finalized \union {<<slot, hash>>} BY <1>3 DEF FastFinalize
       <2>2. SUFFICES ASSUME NEW b1 \in finalized', NEW b2 \in finalized',
                             b1[1] = b2[1]

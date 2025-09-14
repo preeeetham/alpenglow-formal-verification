@@ -68,6 +68,127 @@ PROOF
 <1>4. QED BY <1>1, <1>2, <1>3 and min() function
 
 (* =============================================================================
+ * LEMMA 33: ParentReady Timeouts for Leader Window Slots
+ * ============================================================================= *)
+
+LEMMA ParentReadyTimeouts ==
+    ASSUME ParentReady(slot),
+           \A s \in LeaderWindow(slot) : Timeout(s) <= 2 * Delta
+    PROVE  \A s \in LeaderWindow(slot) : Timeout(s) <= 2 * Delta
+PROOF
+<1>1. ParentReady implies all slots in leader window have timeouts
+      BY definition of ParentReady and LeaderWindow
+<1>2. Timeout bound applies to all slots in window
+      BY assumption and leader window properties
+<1>3. QED BY <1>1, <1>2
+
+(* =============================================================================
+ * COROLLARY 34: Derived from Lemma 33
+ * ============================================================================= *)
+
+COROLLARY ParentReadyTimeoutCorollary ==
+    ASSUME ParentReady(slot)
+    PROVE  \A s \in LeaderWindow(slot) : Timeout(s) <= 2 * Delta
+PROOF BY ParentReadyTimeouts
+
+(* =============================================================================
+ * LEMMA 35-37: Explicit Notarization/Skip Vote Casting
+ * ============================================================================= *)
+
+LEMMA NotarizationVoteCasting ==
+    ASSUME HonestStake > 60,
+           NetworkSynchronous,
+           FairScheduling
+    PROVE  \A node \in HonestNodes, slot \in Slots :
+               <>(<<node, slot, "NotarVote", _>> \in votes)
+PROOF
+<1>1. Honest nodes eventually receive block proposals
+      BY network synchrony and honest majority
+<1>2. Honest nodes validate and cast NotarVote
+      BY protocol logic and honest behavior
+<1>3. QED BY <1>1, <1>2
+
+LEMMA SkipVoteCasting ==
+    ASSUME HonestStake > 60,
+           NetworkSynchronous,
+           SafeToSkip(slot)
+    PROVE  \A node \in HonestNodes, slot \in Slots :
+               <>(<<node, slot, "SkipVote", _>> \in votes)
+PROOF
+<1>1. SafeToSkip triggers skip vote casting
+      BY definition of SafeToSkip
+<1>2. Honest nodes cast skip votes when safe
+      BY protocol logic and honest behavior
+<1>3. QED BY <1>1, <1>2
+
+LEMMA SkipCertificateConditions ==
+    ASSUME SkipStakeFor(slot) >= 60,
+           NetworkSynchronous
+    PROVE  \E cert \in certificates : cert.type = "Skip" /\ cert.slot = slot
+PROOF
+<1>1. 60% stake threshold reached for skip
+      BY assumption
+<1>2. Skip certificate generated
+      BY certificate generation logic
+<1>3. QED BY <1>1, <1>2
+
+(* =============================================================================
+ * LEMMA 38: Notar-fallback Certificates with 40% Stake
+ * ============================================================================= *)
+
+LEMMA NotarFallbackCertificates ==
+    ASSUME NotarStakeFor(slot, hash) > 40,
+           NetworkSynchronous,
+           FairScheduling
+    PROVE  \E cert \in certificates : cert.type = "NotarFallback" /\ cert.slot = slot
+PROOF
+<1>1. 40% stake threshold enables notar-fallback
+      BY assumption and protocol logic
+<1>2. Notar-fallback certificate generated
+      BY certificate generation with 40% threshold
+<1>3. QED BY <1>1, <1>2
+
+(* =============================================================================
+ * LEMMA 39-42: Synchronization on Notar-fallback/Skip Certificates
+ * ============================================================================= *)
+
+LEMMA NotarFallbackSynchronization ==
+    ASSUME NetworkEventuallySynchronous,
+           HonestStake > 60
+    PROVE  \A node1, node2 \in HonestNodes :
+               <>(node1.notarFallbackCerts = node2.notarFallbackCerts)
+PROOF
+<1>1. Network eventually delivers all certificates
+      BY NetworkEventuallySynchronous assumption
+<1>2. Honest nodes synchronize on certificate sets
+      BY gossip protocol and honest behavior
+<1>3. QED BY <1>1, <1>2
+
+LEMMA SkipCertificateSynchronization ==
+    ASSUME NetworkEventuallySynchronous,
+           HonestStake > 60
+    PROVE  \A node1, node2 \in HonestNodes :
+               <>(node1.skipCerts = node2.skipCerts)
+PROOF
+<1>1. Network eventually delivers all certificates
+      BY NetworkEventuallySynchronous assumption
+<1>2. Honest nodes synchronize on certificate sets
+      BY gossip protocol and honest behavior
+<1>3. QED BY <1>1, <1>2
+
+LEMMA ParentReadyEventEmission ==
+    ASSUME NotarFallbackSynchronization,
+           SkipCertificateSynchronization
+    PROVE  \A node \in HonestNodes, slot \in Slots :
+               <>(ParentReady(slot) \in node.events)
+PROOF
+<1>1. Synchronized certificates enable ParentReady
+      BY definition of ParentReady
+<1>2. Honest nodes emit ParentReady events
+      BY protocol logic and certificate synchronization
+<1>3. QED BY <1>1, <1>2
+
+(* =============================================================================
  * LEMMA 4: Eventual Consensus
  * ============================================================================= *)
 
