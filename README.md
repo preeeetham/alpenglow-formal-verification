@@ -210,7 +210,7 @@ python3 experiments/benchmarks/PerformanceAnalysis.py
 - **Model Checking Results**: `VERIFICATION_RESULTS.md`
   - 9,698,927+ states explored
   - All safety properties verified
-  - Performance metrics
+  - Performance metrics and achievements
 
 - **Technical Report**: `docs/technical-report.md`
   - Executive summary
