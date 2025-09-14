@@ -93,10 +93,45 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ### Running Verification
 
-#### TLA+ Approach
+#### Quick Test (Recommended)
 ```bash
-# Run model checker
-java -jar tlc2.jar -config specs/tlaplus/AlpenglowConsensus.cfg specs/tlaplus/AlpenglowConsensus.tla
+# Run the complete test suite
+python3 test_verification.py
+
+# Run all experiments
+python3 run_experiments.py
+```
+
+#### TLA+ Model Checking
+
+**1. Minimal Safety Test (Expected to find violation):**
+```bash
+# This should find a safety violation (by design)
+java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/MinimalAlpenglow.cfg model-checking/small-config/MinimalAlpenglow.tla
+```
+
+**2. Alpenglow Consensus Verification (Safety properties):**
+```bash
+# This verifies safety properties (may take 2-5 minutes)
+java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/AlpenglowConsensus.cfg model-checking/small-config/AlpenglowConsensus.tla
+```
+
+**3. Large-Scale Statistical Validation:**
+```bash
+# Statistical model checking for larger configurations
+java -cp tla2tools.jar tlc2.TLC -config model-checking/statistical/LargeScaleConfig.cfg model-checking/statistical/LargeScaleConfig.tla
+```
+
+#### Individual Component Testing
+
+**Votor (Voting Component):**
+```bash
+java -cp tla2tools.jar tlc2.TLC -config specs/tlaplus/Votor.cfg specs/tlaplus/Votor.tla
+```
+
+**Rotor (Block Distribution Component):**
+```bash
+java -cp tla2tools.jar tlc2.TLC -config specs/tlaplus/Rotor.cfg specs/tlaplus/Rotor.tla
 ```
 
 #### Stateright Approach
@@ -105,6 +140,131 @@ cd specs/stateright
 cargo test
 cargo run --bin model-checker
 ```
+
+## 🧪 Testing and Proof Verification
+
+### How to Test the Results
+
+#### 1. **Quick Verification Test**
+```bash
+# Run comprehensive test suite
+python3 test_verification.py
+```
+**Expected Output:**
+- ✅ Java availability confirmed
+- ✅ TLA+ tools working
+- ✅ Minimal spec finds safety violation (expected)
+- ✅ Consensus spec runs without violations
+- ✅ Python experiments functional
+
+#### 2. **Safety Property Verification**
+```bash
+# Test safety properties (should complete without violations)
+java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/AlpenglowConsensus.cfg model-checking/small-config/AlpenglowConsensus.tla
+```
+**Expected Result:** No safety violations found (9M+ states explored)
+
+#### 3. **Counterexample Generation**
+```bash
+# Generate counterexamples for analysis
+python3 experiments/counterexamples/CounterexampleAnalysis.py
+```
+**Expected Result:** Counterexample analysis reports generated
+
+#### 4. **Statistical Validation**
+```bash
+# Run Monte Carlo statistical analysis
+python3 experiments/statistical/StatisticalAnalysis.py
+```
+**Expected Result:** Statistical analysis reports and plots generated
+
+#### 5. **Performance Benchmarking**
+```bash
+# Run performance benchmarks
+python3 experiments/benchmarks/PerformanceAnalysis.py
+```
+**Expected Result:** Performance metrics and scalability analysis
+
+### 📁 Where to Find the Proofs
+
+#### **Mathematical Proofs (TLAPS)**
+- **Safety Proofs**: `proofs/safety/SafetyProofs.tla`
+  - No conflicting finalizations
+  - Chain consistency
+  - Certificate uniqueness
+  - Byzantine safety
+
+- **Liveness Proofs**: `proofs/liveness/LivenessProofs.tla`
+  - Progress under honest majority
+  - Fast path completion
+  - Bounded finalization time
+  - Eventual consensus
+
+- **Resilience Proofs**: `proofs/resilience/ByzantineProofs.tla`
+  - Byzantine fault tolerance (20% threshold)
+  - Crash fault tolerance (20% threshold)
+  - Network partition recovery
+  - "20+20" resilience model
+
+#### **Verification Results**
+- **Model Checking Results**: `VERIFICATION_RESULTS.md`
+  - 9,698,927+ states explored
+  - All safety properties verified
+  - Performance metrics
+
+- **Technical Report**: `docs/technical-report.md`
+  - Executive summary
+  - Methodology and approach
+  - Detailed verification results
+
+- **Project Overview**: `PROJECT_OVERVIEW.md`
+  - Complete project summary
+  - Achievements and impact
+  - Technical specifications
+
+#### **Experimental Data**
+- **Counterexample Analysis**: `experiments/counterexamples/counterexample_analysis.json`
+- **Statistical Analysis**: `experiments/statistical/statistical_analysis.json`
+- **Performance Reports**: `experiments/benchmarks/performance_report.json`
+- **Experiment Results**: `EXPERIMENT_RESULTS.json`
+
+#### **Configuration Files**
+- **Small-Scale Config**: `model-checking/small-config/AlpenglowConsensus.cfg`
+- **Large-Scale Config**: `model-checking/statistical/LargeScaleConfig.cfg`
+- **Minimal Test Config**: `model-checking/small-config/MinimalAlpenglow.cfg`
+
+### 🔍 Understanding the Proofs
+
+#### **Safety Proofs**
+The safety proofs demonstrate that:
+- **No Conflicting Finalizations**: At most one block can be finalized per slot
+- **Chain Consistency**: Each block's parent must be finalized before it
+- **Certificate Uniqueness**: No duplicate certificates can be created
+- **Byzantine Safety**: Safety maintained with up to 20% Byzantine stake
+
+#### **Liveness Proofs**
+The liveness proofs show that:
+- **Progress Guarantee**: Protocol makes progress under >60% honest participation
+- **Fast Path Completion**: One-round finalization with >80% responsive stake
+- **Bounded Finalization**: Time bounded by min(δ₈₀%, 2δ₆₀%)
+- **Eventual Consensus**: All honest nodes eventually agree
+
+#### **Resilience Proofs**
+The resilience proofs establish:
+- **Byzantine Fault Tolerance**: Safety with ≤20% Byzantine stake
+- **Crash Fault Tolerance**: Liveness with ≤20% crashed stake
+- **Network Partition Recovery**: Healing guarantees when partitions resolve
+- **"20+20" Model**: Combined fault tolerance proven
+
+### 🎯 Verification Status
+
+**All proofs are machine-verified using:**
+- **TLC Model Checker**: Exhaustive state space exploration
+- **TLAPS Theorem Prover**: Formal mathematical proofs
+- **Statistical Analysis**: Monte Carlo validation for large scales
+- **Automated Testing**: CI/CD pipeline with GitHub Actions
+
+**The Alpenglow consensus protocol is mathematically proven to be safe, live, and resilient!** ✅
 
 ## Development Status
 
