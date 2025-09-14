@@ -160,3 +160,7 @@ Desktop.ini
 .directory
 .Trash-*
 .nfs*
+
+# Video walkthrough files (personal use only)
+VIDEO_WALKTHROUGH_SCRIPT.md
+VIDEO_QUICK_REFERENCE.md
