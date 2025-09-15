@@ -183,17 +183,28 @@ class AlpenglowBenchmark:
         
         df = pd.DataFrame(self.results)
         
+        # Convert numpy types to native Python types for JSON serialization
+        def convert_numpy_types(obj):
+            if hasattr(obj, 'item'):  # numpy scalar
+                return obj.item()
+            elif isinstance(obj, dict):
+                return {k: convert_numpy_types(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_numpy_types(item) for item in obj]
+            else:
+                return obj
+        
         report = {
             'summary': {
-                'total_specs_tested': len(self.results),
-                'total_states_explored': df['distinct_states'].sum(),
-                'total_runtime': df['runtime_seconds'].sum(),
-                'average_throughput': df['states_per_second'].mean(),
-                'success_rate': (df['exit_code'] == 0).mean() * 100
+                'total_specs_tested': int(len(self.results)),
+                'total_states_explored': int(df['distinct_states'].sum()),
+                'total_runtime': float(df['runtime_seconds'].sum()),
+                'average_throughput': float(df['states_per_second'].mean()),
+                'success_rate': float((df['exit_code'] == 0).mean() * 100)
             },
-            'detailed_results': self.results,
-            'scalability_analysis': self.benchmark_scalability(),
-            'memory_analysis': self.analyze_memory_usage()
+            'detailed_results': convert_numpy_types(self.results),
+            'scalability_analysis': convert_numpy_types(self.benchmark_scalability()),
+            'memory_analysis': convert_numpy_types(self.analyze_memory_usage())
         }
         
         # Save report
