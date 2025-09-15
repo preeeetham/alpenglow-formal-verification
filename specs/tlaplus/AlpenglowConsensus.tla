@@ -47,6 +47,8 @@ VARIABLES
     notarized,       \* Notarized blocks
     skipped,         \* Skipped slots
 
+vars == <<nodes, stake, slots, leaders, blocks, votes, certificates, network, finalized, fastFinalized, notarized, skipped>>
+
 (* =============================================================================
  * TYPE INVARIANTS
  * ============================================================================= *)
@@ -70,9 +72,11 @@ TypeOK ==
  * ============================================================================= *)
 
 (* Calculate total stake for a set of nodes *)
-TotalStake(nodes) ==
-    LET stakeSum == [n \in nodes |-> stake[n]]
-    IN Sum(stakeSum)
+TotalStake(nodeSet) ==
+    IF nodeSet = {} 
+    THEN 0 
+    ELSE LET node == CHOOSE n \in nodeSet : TRUE
+         IN stake[node] + TotalStake(nodeSet \ {node})
 
 (* Check if a set of nodes has sufficient stake *)
 HasSufficientStake(nodes, threshold) ==
