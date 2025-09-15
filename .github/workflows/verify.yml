@@ -42,13 +42,14 @@ jobs:
       run: |
         echo "🔍 Testing violation detection with MinimalAlpenglow"
         java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/MinimalAlpenglow.cfg model-checking/small-config/MinimalAlpenglow.tla
+        EXIT_CODE=$?
         # Exit code 12 (invariant violation) is expected success for this test
-        if [ $? -eq 12 ]; then
+        if [ $EXIT_CODE -eq 12 ]; then
           echo "✅ SUCCESS: Safety violation detected as expected (this proves the model checker works)"
-        elif [ $? -eq 0 ]; then
+        elif [ $EXIT_CODE -eq 0 ]; then
           echo "✅ SUCCESS: Normal completion (unexpected but acceptable)"
         else
-          echo "❌ FAILURE: Expected violation not detected, got exit code $?"
+          echo "❌ FAILURE: Expected violation not detected, got exit code $EXIT_CODE"
           exit 1
         fi
         
@@ -56,13 +57,14 @@ jobs:
       run: |
         echo "✅ Testing safety verification with SafeConsensus"
         java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/SafeConsensus.cfg model-checking/small-config/SafeConsensus.tla
+        EXIT_CODE=$?
         # Exit code 11 (deadlock) is success for safety verification
-        if [ $? -eq 11 ]; then
+        if [ $EXIT_CODE -eq 11 ]; then
           echo "✅ SUCCESS: Deadlock reached with no safety violations (expected behavior)"
-        elif [ $? -eq 0 ]; then
+        elif [ $EXIT_CODE -eq 0 ]; then
           echo "✅ SUCCESS: Normal completion with no safety violations"
         else
-          echo "❌ FAILURE: Safety verification failed with exit code $?"
+          echo "❌ FAILURE: Safety verification failed with exit code $EXIT_CODE"
           exit 1
         fi
         
@@ -70,13 +72,14 @@ jobs:
       run: |
         echo "🎯 Testing optimized AlpenglowConsensus"
         java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/AlpenglowConsensus.cfg model-checking/small-config/AlpenglowConsensus.tla
+        EXIT_CODE=$?
         # Exit code 11 (deadlock) is success for safety verification
-        if [ $? -eq 11 ]; then
+        if [ $EXIT_CODE -eq 11 ]; then
           echo "✅ SUCCESS: Deadlock reached with no safety violations (expected behavior)"
-        elif [ $? -eq 0 ]; then
+        elif [ $EXIT_CODE -eq 0 ]; then
           echo "✅ SUCCESS: Normal completion with no safety violations"
         else
-          echo "❌ FAILURE: AlpenglowConsensus verification failed with exit code $?"
+          echo "❌ FAILURE: AlpenglowConsensus verification failed with exit code $EXIT_CODE"
           exit 1
         fi
         
