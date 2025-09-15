@@ -338,12 +338,23 @@ def test_model_checking_capabilities() -> Tuple[bool, str]:
             "model-checking/small-config/MinimalAlpenglow.tla"
         ], capture_output=True, text=True, timeout=30)
         
-        if "Invariant Safety is violated" in result.stdout:
+        # Check for safety violation in multiple possible formats
+        violation_found = (
+            "Invariant Safety is violated" in result.stdout or
+            "Invariant.*violated" in result.stdout or
+            "Error: Invariant Safety is violated" in result.stdout or
+            result.returncode == 12  # TLC returns 12 for invariant violations
+        )
+        
+        if violation_found:
             print("PASS: Model checker correctly detects safety violations")
             return True, "Violation detection working correctly"
         else:
             print("FAIL: Model checker should have found a safety violation")
-            return False, f"Expected violation not found: {result.stdout[:200]}"
+            print(f"Return code: {result.returncode}")
+            print(f"STDOUT: {result.stdout[:300]}")
+            print(f"STDERR: {result.stderr[:300]}")
+            return False, f"Expected violation not found. Return code: {result.returncode}"
             
     except subprocess.TimeoutExpired:
         print("PASS: Model checker working (timeout during violation search is normal)")
