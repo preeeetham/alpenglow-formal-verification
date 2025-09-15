@@ -24,7 +24,7 @@ CONSTANTS
     Kappa,           \* Data expansion ratio (2)
     MaxUDPSize,      \* Maximum UDP message size (1500 bytes)
     MaxNodes,        \* Maximum number of nodes (2000)
-    Delta,           \* Maximum network delay bound
+    Delta            \* Maximum network delay bound
 
 (* =============================================================================
  * VARIABLES
@@ -45,17 +45,17 @@ VARIABLES
  * TYPE DEFINITIONS
  * ============================================================================= *)
 
-Block == [slot: Slots, hash: STRING, parent: STRING, data: STRING, merkleRoot: STRING]
+Block == [slot: Slots, hash: STRING, parent: STRING, data: STRING, merkleRoot: STRING];
 
-Shred == [index: Nat, slot: Slots, data: STRING, merkleRoot: STRING, merkleProof: STRING]
+Shred == [index: Nat, slot: Slots, data: STRING, merkleRoot: STRING, merkleProof: STRING];
 
-Slice == [slot: Slots, shreds: SUBSET Shred, merkleRoot: STRING]
+Slice == [slot: Slots, shreds: SUBSET Shred, merkleRoot: STRING];
 
-MerkleTree == [root: STRING, leaves: SUBSET STRING, proofs: [STRING -> STRING]]
+MerkleTree == [root: STRING, leaves: SUBSET STRING, proofs: [STRING -> STRING]];
 
-NetworkMessage == [from: Nodes, to: Nodes, content: STRING, timestamp: Nat]
+NetworkMessage == [from: Nodes, to: Nodes, content: STRING, timestamp: Nat];
 
-Committee == [slot: Slots, nodes: SUBSET Nodes, size: Nat]
+Committee == [slot: Slots, nodes: SUBSET Nodes, size: Nat];
 
 (* =============================================================================
  * TYPE INVARIANTS

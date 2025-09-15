@@ -22,7 +22,7 @@ CONSTANTS
     CrashThreshold,  \* Crash fault threshold (20%)
     Delta,           \* Maximum network delay bound
     DeltaFast,       \* Fast path timeout
-    DeltaSlow,       \* Slow path timeout
+    DeltaSlow        \* Slow path timeout
 
 (* =============================================================================
  * HELPER FUNCTIONS

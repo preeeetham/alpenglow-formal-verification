@@ -27,7 +27,7 @@ CONSTANTS
     Kappa,           \* Data expansion ratio (Gamma/BigGamma = 2)
     W,               \* Blocks per leader window (4)
     ByzantineThreshold, \* Byzantine fault threshold (20%)
-    CrashThreshold,  \* Crash fault threshold (20%)
+    CrashThreshold   \* Crash fault threshold (20%)
 
 (* =============================================================================
  * TYPE DEFINITIONS
@@ -35,7 +35,7 @@ CONSTANTS
 
 VARIABLES
     nodes,           \* Set of active nodes
-    stake,           \* Current stake distribution
+    stake,           \* Current stake distribution  
     slots,           \* Set of processed slots
     leaders,         \* Current leader schedule
     blocks,          \* Proposed blocks
@@ -47,7 +47,7 @@ VARIABLES
     notarized,       \* Notarized blocks
     skipped,         \* Skipped slots
 
-vars == <<nodes, stake, slots, leaders, blocks, votes, certificates, network, finalized, fastFinalized, notarized, skipped>>
+vars == <<nodes, stake, slots, leaders, blocks, votes, certificates, network, finalized, fastFinalized, notarized, skipped>>;
 
 (* =============================================================================
  * TYPE INVARIANTS

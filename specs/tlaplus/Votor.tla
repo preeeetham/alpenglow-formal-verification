@@ -22,7 +22,7 @@ CONSTANTS
     SlowThreshold,   \* Slow path threshold (60%)
     DeltaFast,       \* Fast path timeout
     DeltaSlow,       \* Slow path timeout
-    LeaderWindow,    \* Blocks per leader window (4)
+    LeaderWindow     \* Blocks per leader window (4)
 
 (* =============================================================================
  * VARIABLES
@@ -43,13 +43,13 @@ VARIABLES
  * TYPE DEFINITIONS
  * ============================================================================= *)
 
-VoteType == {"NotarVote", "NotarFallbackVote", "SkipVote", "SkipFallbackVote", "FinalVote"}
+VoteType == {"NotarVote", "NotarFallbackVote", "SkipVote", "SkipFallbackVote", "FinalVote"};
 
-CertificateType == {"FastFinalization", "Notarization", "NotarFallback", "Skip", "Finalization"}
+CertificateType == {"FastFinalization", "Notarization", "NotarFallback", "Skip", "Finalization"};
 
-Vote == [node: Nodes, slot: Slots, type: VoteType, hash: STRING, timestamp: Nat]
+Vote == [node: Nodes, slot: Slots, type: VoteType, hash: STRING, timestamp: Nat];
 
-Certificate == [type: CertificateType, slot: Slots, hash: STRING, stake: [0,1], timestamp: Nat]
+Certificate == [type: CertificateType, slot: Slots, hash: STRING, stake: [0,1], timestamp: Nat];
 
 (* =============================================================================
  * TYPE INVARIANTS
