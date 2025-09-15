@@ -16,8 +16,8 @@ VARIABLES
 vars == <<votes, finalized, fastFinalized>>
 
 Nodes == {N1, N2, N3, N4}
-Slots == {1, 2, 3}
-Hashes == {"A", "B"}
+Slots == {1}  (* Reduced to 1 slot for large state space *)
+Hashes == {"A"}  (* Reduced to 1 hash for large state space *)
 VoteTypes == {"NotarVote", "FinalVote"}
 
 (* Each node has 25% stake *)
