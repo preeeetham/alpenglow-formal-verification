@@ -8,6 +8,8 @@ import subprocess
 import time
 import os
 import json
+import shutil
+import glob
 from typing import Dict, List, Tuple, Optional
 
 # Set Java PATH for macOS Homebrew installation
@@ -328,6 +330,34 @@ def verify_committee_sampling_theorems() -> List[TheoremTestResult]:
 def test_model_checking_capabilities() -> Tuple[bool, str]:
     """Test that model checking infrastructure works correctly"""
     print("\n=== MODEL CHECKING INFRASTRUCTURE TEST ===")
+    
+    # Clean up any existing TLC state directories
+    try:
+        # Clean up timestamped directories
+        state_dirs = glob.glob("states/25-*")
+        for state_dir in state_dirs:
+            if os.path.exists(state_dir):
+                shutil.rmtree(state_dir)
+                print(f"Cleaned up existing state directory: {state_dir}")
+        
+        # Also clean up any other state directories
+        if os.path.exists("states"):
+            for item in os.listdir("states"):
+                item_path = os.path.join("states", item)
+                if os.path.isdir(item_path):
+                    shutil.rmtree(item_path)
+                    print(f"Cleaned up state directory: {item_path}")
+                    
+        # Create fresh states directory
+        os.makedirs("states", exist_ok=True)
+        
+    except Exception as e:
+        print(f"Warning: Could not clean up state directories: {e}")
+        # Try to create states directory anyway
+        try:
+            os.makedirs("states", exist_ok=True)
+        except:
+            pass
     
     # Test that the minimal broken spec correctly identifies violations
     print("Testing violation detection with MinimalAlpenglow (should find safety violation)...")
