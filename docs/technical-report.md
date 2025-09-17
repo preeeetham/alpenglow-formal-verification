@@ -373,6 +373,54 @@ Resilience Properties
 
 **The implementation now provides comprehensive coverage of all safety, liveness, committee sampling, and Rotor optimization properties from the Alpenglow whitepaper.**
 
+## Edge Cases Covered
+
+This section summarizes key edge cases explicitly modeled/validated with pointers to specs, proofs, and tests.
+
+- Safety/forking
+  - Conflicting finalizations per slot; certificate uniqueness; chain consistency; ancestor preservation
+  - Where: `proofs/safety/SafetyProofs.tla`, `specs/tlaplus/AlpenglowConsensus.tla`, `specs/tlaplus/Properties.tla`
+  - Tests: `test_verification.py` (Safety), TLC runs in `run_experiments.py`
+
+- Voting transitions and certificates
+  - NotarVote → FinalVote; Skip/Fallback; thresholds (80% fast, 60% notarize/finalize); Finalized ⇒ Notarized
+  - Where: `specs/tlaplus/Votor.tla`, `specs/tlaplus/AlpenglowConsensus.tla`
+  - Proofs: `proofs/safety/SafetyProofs.tla`, `proofs/liveness/LivenessProofs.tla`
+
+- Timing and partial synchrony
+  - Pre‑GST arbitrary delays; post‑GST ≤ Δ; δ_80% vs 2·δ_60%; timeout init/scale/reset
+  - Where: `proofs/liveness/LivenessProofs.tla`; params in `model-checking/*/*.cfg`
+
+- Byzantine behaviors
+  - Equivocation, vote delays, certificate withholding, selective relay forwarding
+  - Where: `proofs/resilience/ByzantineProofs.tla`; modeled constraints in specs
+
+- Network anomalies
+  - Total/asymmetric partitions, reordering, duplication, delayed delivery
+  - Where: `proofs/liveness/LivenessProofs.tla`; safety preserved in resilience proofs
+
+- Rotor (block propagation)
+  - Erasure reconstruction; malformed shred detection; Merkle path verification; PS‑P sampling; relay failures
+  - Where: `specs/tlaplus/Rotor.tla`, `proofs/committee/CommitteeSamplingProofs.tla`
+
+- Leader rotation/windowing
+  - ParentReady; first‑slot parent switch; optimistic pre‑ParentReady; certificate inheritance
+  - Where: `specs/tlaplus/AlpenglowConsensus.tla`, `specs/tlaplus/Votor.tla`
+
+- Recovery paths
+  - Standstill detection; certificate rebroadcast; vote retransmission; missing‑shred repair; ancestor recovery
+  - Where: modeled in `specs/tlaplus/*`; exercised by experiments
+
+- Performance invariants
+  - Stake‑proportional bandwidth; throughput bounds; latency min(δ_80%, 2·δ_60%)
+  - Where: `specs/tlaplus/Rotor.tla`; `experiments/benchmarks/PerformanceAnalysis.py`
+
+- Exhaustive vs statistical scopes
+  - TLC exhaustive (4–10 nodes); Monte Carlo (10–30 nodes by default)
+  - Where: `model-checking/small-config/*`, `experiments/statistical/StatisticalAnalysis.py`
+
+Supporting scripts: `test_verification.py`, `run_experiments.py`, `experiments/counterexamples/CounterexampleAnalysis.py`
+
 ## Detailed Theorem Verification Results
 
 ### Safety Properties - All 4 Theorems Successfully Verified ✅
