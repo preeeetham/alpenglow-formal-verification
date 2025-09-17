@@ -1,0 +1,71 @@
+{
+  "summary": {
+    "total_specs_tested": 2,
+    "total_states_explored": 362,
+    "total_runtime": 1.7183897495269775,
+    "average_throughput": 0.0,
+    "success_rate": 0.0
+  },
+  "detailed_results": [
+    {
+      "states_generated": 38,
+      "distinct_states": 10,
+      "states_per_second": 0,
+      "memory_usage": 0,
+      "invariant_violations": 1,
+      "deadlocks": 0,
+      "spec_file": "MinimalAlpenglow.tla",
+      "config_file": "MinimalAlpenglow.cfg",
+      "runtime_seconds": 0.8014671802520752,
+      "exit_code": 12,
+      "timeout": false
+    },
+    {
+      "states_generated": 1381,
+      "distinct_states": 352,
+      "states_per_second": 0,
+      "memory_usage": 0,
+      "invariant_violations": 0,
+      "deadlocks": 1,
+      "spec_file": "AlpenglowConsensus.tla",
+      "config_file": "AlpenglowConsensus.cfg",
+      "runtime_seconds": 0.9169225692749023,
+      "exit_code": 11,
+      "timeout": false
+    }
+  ],
+  "scalability_analysis": [
+    {
+      "nodes": 3,
+      "estimated_states": 262144,
+      "theoretical_runtime": 52.4288
+    },
+    {
+      "nodes": 4,
+      "estimated_states": 4194304,
+      "theoretical_runtime": 838.8608
+    },
+    {
+      "nodes": 5,
+      "estimated_states": 67108864,
+      "theoretical_runtime": 13421.7728
+    },
+    {
+      "nodes": 6,
+      "estimated_states": 1073741824,
+      "theoretical_runtime": 214748.3648
+    }
+  ],
+  "memory_analysis": [
+    {
+      "spec": "MinimalAlpenglow.tla",
+      "states": 10,
+      "memory_per_state": 0.0
+    },
+    {
+      "spec": "AlpenglowConsensus.tla",
+      "states": 352,
+      "memory_per_state": 0.0
+    }
+  ]
+}
