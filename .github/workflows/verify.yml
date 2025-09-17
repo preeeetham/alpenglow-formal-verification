@@ -229,7 +229,7 @@ PY
         
     - name: Test performance benchmarking
       run: |
-        echo "⚡ Running performance benchmarking"
+        echo "Running performance benchmarking"
         python3 experiments/benchmarks/PerformanceAnalysis.py
         
     - name: Verify all tests pass
