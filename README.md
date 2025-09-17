@@ -67,7 +67,7 @@ alpenglow-formal-verification/
 
 ### Prerequisites
 
-- Java 11+ (for TLA+ tools)
+- Java 17 (for TLA+ tools)
 - Rust 1.70+ (for Stateright)
 - VSCode with TLA+ extension (optional)
 
@@ -79,11 +79,14 @@ git clone https://github.com/your-username/alpenglow-formal-verification.git
 cd alpenglow-formal-verification
 ```
 
-2. Install TLA+ tools:
+2. Java/TLA+ setup:
 ```bash
-# Download TLA+ tools
-wget https://github.com/tlaplus/tlaplus/releases/latest/download/tla2tools.jar
-wget https://github.com/tlaplus/tlaplus/releases/latest/download/tlc2.jar
+# macOS (Homebrew):
+brew install openjdk@17
+echo 'export JAVA_HOME=$(brew --prefix openjdk@17)' >> ~/.zshrc
+echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zshrc
+
+# TLA+ tools are included in this repo (tla2tools.jar, tlc2.jar)
 ```
 
 3. Install Rust (for Stateright):
@@ -92,6 +95,14 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 ### Running Verification
+
+Create and activate a virtual environment (recommended):
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install numpy matplotlib pandas scipy networkx psutil
+```
 
 #### Quick Test (Recommended)
 ```bash
@@ -229,10 +240,12 @@ python3 experiments/benchmarks/PerformanceAnalysis.py
   - Technical specifications
 
 #### **Experimental Data**
-- **Counterexample Analysis**: `experiments/counterexamples/counterexample_analysis.json`
-- **Statistical Analysis**: `experiments/statistical/statistical_analysis.json`
-- **Performance Reports**: `experiments/benchmarks/performance_report.json`
-- **Experiment Results**: `EXPERIMENT_RESULTS.json`
+- The following artifacts are generated on demand by the scripts and are not committed:
+  - `experiments/counterexamples/counterexample_analysis.json`
+  - `experiments/benchmarks/performance_report.json`
+  - plots under `experiments/**/plots/`
+- Persisted analysis available in-repo:
+  - `experiments/statistical/statistical_analysis.json`
 
 #### **Configuration Files**
 - **Small-Scale Config**: `model-checking/small-config/AlpenglowConsensus.cfg`
