@@ -118,8 +118,6 @@ jobs:
         test -f LICENSE
         echo "✅ VERIFICATION_RESULTS.md exists"
         test -f VERIFICATION_RESULTS.md
-        echo "✅ COMPLETION_SUMMARY.md exists"
-        test -f COMPLETION_SUMMARY.md
         echo "✅ Technical report exists"
         test -f docs/technical-report.md
         
