@@ -178,15 +178,7 @@ jobs:
       run: |
         if [ -f EXPERIMENT_RESULTS.json ]; then
           echo "Verification Status:"
-          python3 - <<'PY'
-          import json
-          with open('EXPERIMENT_RESULTS.json', 'r') as f:
-              results = json.load(f)
-          print(f"Total Tests: {results['summary']['total_tests']}")
-          print(f"Successful: {results['summary']['successful_tests']}")
-          print(f"Success Rate: {results['summary']['success_rate']}%")
-          print(f"Overall Status: {results['summary']['overall_status']}")
-          PY
+          python3 -c $'import json\nwith open("EXPERIMENT_RESULTS.json", "r") as f:\n    results = json.load(f)\nprint(f"Total Tests: {results[\'summary\'][\'total_tests\']}")\nprint(f"Successful: {results[\'summary\'][\'successful_tests\']}")\nprint(f"Success Rate: {results[\'summary\'][\'success_rate\']}%")\nprint(f"Overall Status: {results[\'summary\'][\'overall_status\']}")'
         else
           echo "EXPERIMENT_RESULTS.json not found; skipping verification status summary"
         fi
