@@ -41,7 +41,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install numpy matplotlib pandas scipy networkx psutil
 
-      - name: Sanity: list Java and Python
+      - name: "Sanity: list Java and Python"
         run: |
           java -version
           python --version
