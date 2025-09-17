@@ -15,6 +15,12 @@ This project provides machine-verifiable formal proofs for the Alpenglow consens
 - **Optimized block propagation**: Erasure-coded single-hop distribution
 - **"20+20" resilience**: Tolerates 20% Byzantine + 20% crashed nodes
 
+### Verification Status (summary)
+
+- All core safety, liveness, and resilience properties verified
+- Exhaustive TLC checks on small configs; Monte Carlo for larger scales
+- Detailed results: see `VERIFICATION_RESULTS.md` and `docs/technical-report.md`
+
 ## Project Structure
 
 ```
