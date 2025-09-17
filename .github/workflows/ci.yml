@@ -53,4 +53,12 @@ jobs:
           set -e
           python run_experiments.py || echo "Experiments returned non-zero; continuing"
 
+      - name: Check experiment results file (non-blocking)
+        run: |
+          if [ -f EXPERIMENT_RESULTS.json ]; then
+            echo "EXPERIMENT_RESULTS.json exists"
+          else
+            echo "EXPERIMENT_RESULTS.json not found (non-blocking)"
+          fi
+
 
