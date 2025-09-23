@@ -86,29 +86,98 @@ cd alpenglow-formal-verification
 ```
 
 2. Java/TLA+ setup:
+
+**⚠️ IMPORTANT: Java setup is critical for TLA+ tools to work properly**
+
+#### Quick Setup (Recommended)
+```bash
+# Run the automated setup script
+./setup_java.sh
+```
+
+#### Manual Setup
 ```bash
 # macOS (Homebrew):
 brew install openjdk@17
-echo 'export JAVA_HOME=$(brew --prefix openjdk@17)' >> ~/.zshrc
-echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zshrc
+
+# Set environment variables permanently
+echo 'export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home' >> ~/.zshrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.zshrc
+source ~/.zshrc
+
+# Verify installation
+java -version  # Should show OpenJDK 17.x.x
 
 # TLA+ tools are included in this repo (tla2tools.jar, tlc2.jar)
 ```
+
+#### Troubleshooting Java Issues
+If you encounter "Unable to locate a Java Runtime" errors:
+
+1. **Check JAVA_HOME is set:**
+   ```bash
+   echo $JAVA_HOME
+   # Should show: /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
+   ```
+
+2. **If not set, run the setup script:**
+   ```bash
+   ./setup_java.sh
+   ```
+
+3. **Restart your terminal** after running the setup script
+
+4. **For persistent issues, add to your shell profile:**
+   ```bash
+   # For zsh users
+   echo 'export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home' >> ~/.zshrc
+   echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.zshrc
+   
+   # For bash users  
+   echo 'export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home' >> ~/.bash_profile
+   echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile
+   ```
 
 3. Install Rust (for Stateright):
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-### Running Verification
+### Python Setup (Required for experiments)
 
-Create and activate a virtual environment (recommended):
+**⚠️ IMPORTANT: Python virtual environment is required for experiments**
+
+#### Quick Setup
 ```bash
+# Create and activate virtual environment
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install required packages
 python -m pip install --upgrade pip
 python -m pip install numpy matplotlib pandas scipy networkx psutil
 ```
+
+#### Troubleshooting Python Issues
+If you encounter "ModuleNotFoundError" or "externally-managed-environment" errors:
+
+1. **Always use virtual environment:**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+2. **Install packages in virtual environment:**
+   ```bash
+   pip install numpy matplotlib pandas scipy networkx psutil
+   ```
+
+3. **Verify installation:**
+   ```bash
+   python -c "import numpy, matplotlib, pandas, scipy, networkx, psutil; print('All packages installed successfully')"
+   ```
+
+### Running Verification
 
 #### Quick Test (Recommended)
 ```bash
