@@ -61,18 +61,6 @@ CONSTANTS
 
 INVARIANTS
     LargeScaleInvariants
-
-PROPERTIES
-    ProbabilisticSafety
-
-MAX_STATES
-    50000
-
-TIMEOUT
-    300
-
-WORKERS
-    4
 """
         
         with open(config_path, 'w') as f:
