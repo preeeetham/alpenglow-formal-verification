@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total_simulations": 16,
+    "total_simulations": 20,
     "successful_simulations": 0,
     "success_rate": 0.0,
     "avg_states_explored": 0,
@@ -12,6 +12,11 @@
       "max_byzantine": 0,
       "total_tests": 16,
       "successful_tests": 0
+    },
+    "6": {
+      "max_byzantine": 0,
+      "total_tests": 4,
+      "successful_tests": 0
     }
   },
   "detailed_results": [
@@ -20,132 +25,18 @@
         "NodeCount": 4,
         "ByzantineCount": 0,
         "CrashedCount": 0,
-        "SlotCount": 1,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 237704
-      },
-      "runtime": 0.07879328727722168,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC could not make a directory /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15 for the disk files it needs to write.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:255)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
         "SlotCount": 2,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 763828
+        "seed": 443608
       },
-      "runtime": 0.07910513877868652,
+      "runtime": 0.20245981216430664,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 2,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 980153
-      },
-      "runtime": 0.0814518928527832,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 1,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 769187
-      },
-      "runtime": 0.08417725563049316,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 2,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 919054
-      },
-      "runtime": 0.0868220329284668,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 2,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 458038
-      },
-      "runtime": 0.08667588233947754,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 1,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 923275
-      },
-      "runtime": 0.1854391098022461,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 46 and seed -3635631583571784247 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 19859] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_923275.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 17:41:15)\n",
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 129 and seed 9122724286355379536 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32890] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_443608.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
       "error": "Exit code: 255"
     },
     {
@@ -156,16 +47,16 @@
         "SlotCount": 1,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 606054
+        "seed": 344104
       },
-      "runtime": 0.0860140323638916,
+      "runtime": 0.2059481143951416,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 101 and seed -1753988277659207044 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32887] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_344104.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -175,16 +66,16 @@
         "SlotCount": 2,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 947181
+        "seed": 291924
       },
-      "runtime": 0.09171295166015625,
+      "runtime": 0.20614409446716309,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 11 and seed 4357908033341674616 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32889] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_291924.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -194,54 +85,16 @@
         "SlotCount": 1,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 453007
+        "seed": 94062
       },
-      "runtime": 0.09221410751342773,
+      "runtime": 0.20764708518981934,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 1,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 524502
-      },
-      "runtime": 0.09035086631774902,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
-    },
-    {
-      "config": {
-        "NodeCount": 4,
-        "ByzantineCount": 0,
-        "CrashedCount": 0,
-        "SlotCount": 1,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 677729
-      },
-      "runtime": 0.08585882186889648,
-      "success": false,
-      "states_explored": 0,
-      "distinct_states": 0,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 52 and seed -8708997179832876434 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32888] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_94062.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -251,16 +104,111 @@
         "SlotCount": 2,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 970829
+        "seed": 834998
       },
-      "runtime": 0.08710718154907227,
+      "runtime": 0.20166778564453125,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 28 and seed -5867305427692649162 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32892] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_834998.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 770331
+      },
+      "runtime": 0.2003920078277588,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 119 and seed 4674686827128250455 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32895] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_770331.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 2,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 783569
+      },
+      "runtime": 0.20099997520446777,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 8 and seed 5883143805775003199 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32893] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_783569.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 753549
+      },
+      "runtime": 0.20428013801574707,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 43 and seed -3534172746327513634 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32896] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_753549.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 234297
+      },
+      "runtime": 0.19035124778747559,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 93 and seed -8236675351522707411 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32898] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_234297.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 2,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 291418
+      },
+      "runtime": 0.1903212070465088,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 35 and seed -5626707476696099238 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32899] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_291418.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -270,16 +218,16 @@
         "SlotCount": 1,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 438136
+        "seed": 461075
       },
-      "runtime": 0.09129691123962402,
+      "runtime": 0.19224882125854492,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 28 and seed 4613291181546994122 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32900] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_461075.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -289,16 +237,35 @@
         "SlotCount": 1,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 268555
+        "seed": 793448
       },
-      "runtime": 0.08818507194519043,
+      "runtime": 0.1958317756652832,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 90 and seed -1770222179455060672 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32901] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_793448.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 68097
+      },
+      "runtime": 0.19304180145263672,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 3 and seed -2863963791189286631 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32902] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_68097.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -308,16 +275,130 @@
         "SlotCount": 1,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 264082
+        "seed": 177145
       },
-      "runtime": 0.08327603340148926,
+      "runtime": 0.19669127464294434,
       "success": false,
       "states_explored": 0,
       "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/small-config/states/25-09-24-17-41-15, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
-      "error": "Exit code: 1"
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 39 and seed 2332404728074784461 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32903] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_177145.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 2,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 256839
+      },
+      "runtime": 0.19527602195739746,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 130 and seed 4932393186012842351 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32904] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_256839.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 4,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 2,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 247468
+      },
+      "runtime": 0.19541311264038086,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 34 and seed -6809468730052093321 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32905] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_4_0_0_247468.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 6,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 1,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 152988
+      },
+      "runtime": 0.20153403282165527,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 61 and seed -6009296127088945408 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32907] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_6_0_0_152988.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 6,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 2,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 227961
+      },
+      "runtime": 0.20168018341064453,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 63 and seed 6924083457353147333 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32909] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_6_0_0_227961.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 6,
+        "ByzantineCount": 0,
+        "CrashedCount": 0,
+        "SlotCount": 1,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 486512
+      },
+      "runtime": 0.20307374000549316,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 123 and seed 5732071371497297370 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32908] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_6_0_0_486512.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
+    },
+    {
+      "config": {
+        "NodeCount": 6,
+        "ByzantineCount": 0,
+        "CrashedCount": 1,
+        "SlotCount": 1,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 647201
+      },
+      "runtime": 0.20886588096618652,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 111 and seed -7344347413165502945 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 32910] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_6_0_1_647201.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 19:51:06)\n",
+      "error": "Exit code: 255"
     }
   ]
 }
