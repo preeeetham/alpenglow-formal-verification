@@ -233,6 +233,25 @@ LargeScaleInvariants ==
     /\ TotalStake(byzantineNodes) <= 20
     /\ TotalStake(crashedNodes) <= 20
 
+(* =============================================================================
+ * SPECIFICATION
+ * ============================================================================= *)
+
+Init ==
+    /\ votes = {}
+    /\ finalized = {}
+    /\ byzantineNodes = {}
+    /\ crashedNodes = {}
+
+Next ==
+    \/ VoteAction
+    /\ RandomByzantineSelection
+    /\ RandomCrashSelection
+    /\ FastFinalize
+    /\ SlowFinalize
+
+Spec == Init /\ [][Next]_vars
+
 THEOREM Spec => []LargeScaleInvariants
 
 ====
