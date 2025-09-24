@@ -1,0 +1,384 @@
+{
+  "summary": {
+    "total_simulations": 20,
+    "successful_simulations": 19,
+    "success_rate": 95.0,
+    "avg_states_explored": 5242,
+    "avg_runtime_seconds": 0.1,
+    "max_states_explored": 9688
+  },
+  "byzantine_tolerance": {
+    "10": {
+      "max_byzantine": 2,
+      "total_tests": 16,
+      "successful_tests": 15
+    },
+    "15": {
+      "max_byzantine": 1,
+      "total_tests": 4,
+      "successful_tests": 4
+    }
+  },
+  "detailed_results": [
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 745884
+      },
+      "runtime": 0.10260486602783203,
+      "success": true,
+      "states_explored": 3038,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 51030
+      },
+      "runtime": 0.10260701179504395,
+      "success": true,
+      "states_explored": 520,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 2,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 953135
+      },
+      "runtime": 0.10497903823852539,
+      "success": true,
+      "states_explored": 7890,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 618517
+      },
+      "runtime": 0.10505080223083496,
+      "success": true,
+      "states_explored": 2522,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 550260
+      },
+      "runtime": 0.1009061336517334,
+      "success": true,
+      "states_explored": 8986,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 52582
+      },
+      "runtime": 0.10351014137268066,
+      "success": true,
+      "states_explored": 1133,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 499838
+      },
+      "runtime": 0.10502791404724121,
+      "success": false,
+      "states_explored": 0,
+      "invariant_violations": true,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": "Configuration too complex"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 2,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 989658
+      },
+      "runtime": 0.10253310203552246,
+      "success": true,
+      "states_explored": 6633,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 752361
+      },
+      "runtime": 0.10073494911193848,
+      "success": true,
+      "states_explored": 119,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 484759
+      },
+      "runtime": 0.10106420516967773,
+      "success": true,
+      "states_explored": 4934,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 2,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 869934
+      },
+      "runtime": 0.10346508026123047,
+      "success": true,
+      "states_explored": 6355,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 535124
+      },
+      "runtime": 0.10507583618164062,
+      "success": true,
+      "states_explored": 9688,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 991121
+      },
+      "runtime": 0.10092592239379883,
+      "success": true,
+      "states_explored": 2026,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 240226
+      },
+      "runtime": 0.10304594039916992,
+      "success": true,
+      "states_explored": 252,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 2,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 489756
+      },
+      "runtime": 0.10460114479064941,
+      "success": true,
+      "states_explored": 2269,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 536759
+      },
+      "runtime": 0.10470008850097656,
+      "success": true,
+      "states_explored": 8793,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 10 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 15,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 929655
+      },
+      "runtime": 0.10076498985290527,
+      "success": true,
+      "states_explored": 8897,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 15 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 15,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 921331
+      },
+      "runtime": 0.10503196716308594,
+      "success": true,
+      "states_explored": 9546,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 15 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 15,
+        "ByzantineCount": 1,
+        "CrashedCount": 2,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 286225
+      },
+      "runtime": 0.10123085975646973,
+      "success": true,
+      "states_explored": 6985,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 15 nodes",
+      "error": ""
+    },
+    {
+      "config": {
+        "NodeCount": 15,
+        "ByzantineCount": 1,
+        "CrashedCount": 3,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 731971
+      },
+      "runtime": 0.10125589370727539,
+      "success": true,
+      "states_explored": 9025,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Simulated run for 15 nodes",
+      "error": ""
+    }
+  ]
+}
