@@ -1,5 +1,5 @@
 ---- MODULE LargeScaleConfig ----
-EXTENDS Naturals, FiniteSets
+EXTENDS Naturals, FiniteSets, Reals
 
 (*
  * Large-Scale Alpenglow Configuration for Statistical Model Checking
@@ -78,8 +78,11 @@ DeliverMessage(from, to, message, delay) ==
  * ============================================================================= *)
 
 (* Calculate stake for a set of nodes *)
+(* Sum helper function *)
+Sum(S) == IF S = {} THEN 0 ELSE LET x == CHOOSE x \in S : TRUE IN x + Sum(S \ {x})
+
 TotalStake(nodes) ==
-    Sum([n \in nodes |-> Stake[n]])
+    Sum({Stake[n] : n \in nodes})
 
 (* Get honest nodes (non-Byzantine, non-crashed) *)
 HonestNodes == Nodes \ (byzantineNodes \union crashedNodes)
@@ -233,24 +236,7 @@ LargeScaleInvariants ==
     /\ TotalStake(byzantineNodes) <= 20
     /\ TotalStake(crashedNodes) <= 20
 
-(* =============================================================================
- * SPECIFICATION
- * ============================================================================= *)
-
-Init ==
-    /\ votes = {}
-    /\ finalized = {}
-    /\ byzantineNodes = {}
-    /\ crashedNodes = {}
-
-Next ==
-    \/ VoteAction
-    /\ RandomByzantineSelection
-    /\ RandomCrashSelection
-    /\ FastFinalize
-    /\ SlowFinalize
-
-Spec == Init /\ [][Next]_vars
+(* Remove duplicate definitions - already defined above *)
 
 THEOREM Spec => []LargeScaleInvariants
 

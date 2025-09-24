@@ -1,22 +1,22 @@
 {
   "summary": {
     "total_simulations": 20,
-    "successful_simulations": 19,
-    "success_rate": 95.0,
-    "avg_states_explored": 5242,
-    "avg_runtime_seconds": 0.1,
-    "max_states_explored": 9688
+    "successful_simulations": 0,
+    "success_rate": 0.0,
+    "avg_states_explored": 0,
+    "avg_runtime_seconds": 0.0,
+    "max_states_explored": 0
   },
   "byzantine_tolerance": {
     "10": {
-      "max_byzantine": 2,
+      "max_byzantine": 0,
       "total_tests": 16,
-      "successful_tests": 15
+      "successful_tests": 0
     },
     "15": {
-      "max_byzantine": 1,
+      "max_byzantine": 0,
       "total_tests": 4,
-      "successful_tests": 4
+      "successful_tests": 0
     }
   },
   "detailed_results": [
@@ -28,123 +28,111 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 745884
+        "seed": 928551
       },
-      "runtime": 0.10260486602783203,
-      "success": true,
-      "states_explored": 3038,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 51030
-      },
-      "runtime": 0.10260701179504395,
-      "success": true,
-      "states_explored": 520,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 2,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 953135
-      },
-      "runtime": 0.10497903823852539,
-      "success": true,
-      "states_explored": 7890,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 618517
-      },
-      "runtime": 0.10505080223083496,
-      "success": true,
-      "states_explored": 2522,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 550260
-      },
-      "runtime": 0.1009061336517334,
-      "success": true,
-      "states_explored": 8986,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 52582
-      },
-      "runtime": 0.10351014137268066,
-      "success": true,
-      "states_explored": 1133,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 499838
-      },
-      "runtime": 0.10502791404724121,
+      "runtime": 0.07904601097106934,
       "success": false,
       "states_explored": 0,
-      "invariant_violations": true,
+      "distinct_states": 0,
+      "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": "Configuration too complex"
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC could not make a directory /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06 for the disk files it needs to write.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:255)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 38593
+      },
+      "runtime": 0.07840394973754883,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 360914
+      },
+      "runtime": 0.08289003372192383,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 345000
+      },
+      "runtime": 0.08371090888977051,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 763383
+      },
+      "runtime": 0.08057713508605957,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 1,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 172741
+      },
+      "runtime": 0.08230209350585938,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -154,15 +142,16 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 989658
+        "seed": 82945
       },
-      "runtime": 0.10253310203552246,
-      "success": true,
-      "states_explored": 6633,
+      "runtime": 0.18531298637390137,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)\nRunning breadth-first search Model-Checking with fp 111 and seed -1780763658314541861 with 4 workers on 12 cores with 3641MB heap and 64MB offheap memory [pid: 18775] (Mac OS X 26.0 aarch64, Homebrew 17.0.16 x86_64, MSBDiskFPSet, DiskStateQueue).\nError: TLC threw an unexpected exception.\nThis was probably caused by an error in the spec or model.\nSee the User Output or TLC Console for clues to what happened.\nThe exception was a tlc2.tool.ConfigFileException\n: TLC encountered the following error when trying to read the configuration file /Users/preet/Developer/alpenglow-formal-verification/experiments/statistical/configs/stat_10_1_2_82945.cfg:\nFile not found.\nFinished in 00s at (2025-09-24 17:34:06)\n",
+      "error": "Exit code: 255"
     },
     {
       "config": {
@@ -172,33 +161,16 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 752361
+        "seed": 582372
       },
-      "runtime": 0.10073494911193848,
-      "success": true,
-      "states_explored": 119,
+      "runtime": 0.08561110496520996,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 1,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 484759
-      },
-      "runtime": 0.10106420516967773,
-      "success": true,
-      "states_explored": 4934,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -208,15 +180,16 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 869934
+        "seed": 822818
       },
-      "runtime": 0.10346508026123047,
-      "success": true,
-      "states_explored": 6355,
+      "runtime": 0.08761382102966309,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -226,69 +199,54 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 535124
+        "seed": 811068
       },
-      "runtime": 0.10507583618164062,
-      "success": true,
-      "states_explored": 9688,
+      "runtime": 0.0899651050567627,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
         "NodeCount": 10,
-        "ByzantineCount": 2,
+        "ByzantineCount": 1,
         "CrashedCount": 1,
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 991121
+        "seed": 186307
       },
-      "runtime": 0.10092592239379883,
-      "success": true,
-      "states_explored": 2026,
+      "runtime": 0.08929896354675293,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
         "NodeCount": 10,
-        "ByzantineCount": 2,
-        "CrashedCount": 1,
-        "SlotCount": 3,
-        "HashVariants": 2,
-        "NetworkDelay": 100,
-        "seed": 240226
-      },
-      "runtime": 0.10304594039916992,
-      "success": true,
-      "states_explored": 252,
-      "invariant_violations": false,
-      "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
-    },
-    {
-      "config": {
-        "NodeCount": 10,
-        "ByzantineCount": 2,
+        "ByzantineCount": 1,
         "CrashedCount": 2,
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 489756
+        "seed": 319850
       },
-      "runtime": 0.10460114479064941,
-      "success": true,
-      "states_explored": 2269,
+      "runtime": 0.09345889091491699,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -298,15 +256,54 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 536759
+        "seed": 80700
       },
-      "runtime": 0.10470008850097656,
-      "success": true,
-      "states_explored": 8793,
+      "runtime": 0.09032201766967773,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 10 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 564208
+      },
+      "runtime": 0.09186935424804688,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 1,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 311033
+      },
+      "runtime": 0.0931859016418457,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -316,15 +313,16 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 929655
+        "seed": 176178
       },
-      "runtime": 0.10076498985290527,
-      "success": true,
-      "states_explored": 8897,
+      "runtime": 0.09393191337585449,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 15 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -334,15 +332,35 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 921331
+        "seed": 93857
       },
-      "runtime": 0.10503196716308594,
-      "success": true,
-      "states_explored": 9546,
+      "runtime": 0.09267711639404297,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 15 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
+    },
+    {
+      "config": {
+        "NodeCount": 10,
+        "ByzantineCount": 2,
+        "CrashedCount": 2,
+        "SlotCount": 3,
+        "HashVariants": 2,
+        "NetworkDelay": 100,
+        "seed": 618530
+      },
+      "runtime": 0.09803104400634766,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
+      "invariant_violations": false,
+      "deadlocks": false,
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -352,15 +370,16 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 286225
+        "seed": 191064
       },
-      "runtime": 0.10123085975646973,
-      "success": true,
-      "states_explored": 6985,
+      "runtime": 0.09909582138061523,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 15 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     },
     {
       "config": {
@@ -370,15 +389,16 @@
         "SlotCount": 3,
         "HashVariants": 2,
         "NetworkDelay": 100,
-        "seed": 731971
+        "seed": 585237
       },
-      "runtime": 0.10125589370727539,
-      "success": true,
-      "states_explored": 9025,
+      "runtime": 0.08697295188903809,
+      "success": false,
+      "states_explored": 0,
+      "distinct_states": 0,
       "invariant_violations": false,
       "deadlocks": false,
-      "output": "Simulated run for 15 nodes",
-      "error": ""
+      "output": "Exception in thread \"main\" util.Assert$TLCRuntimeException: TLC writes its files to a directory whose name is generated from the current time.\nThis directory should be /Users/preet/Developer/alpenglow-formal-verification/model-checking/statistical/states/25-09-24-17-34-06, but that directory already exists.\nTrying to run TLC again will probably fix this problem.\n\tat util.Assert.check(Assert.java:91)\n\tat util.FileUtil.makeMetaDir(FileUtil.java:252)\n\tat tlc2.TLC.handleParameters(TLC.java:958)\n\tat tlc2.TLC.main(TLC.java:246)\n",
+      "error": "Exit code: 1"
     }
   ]
 }
