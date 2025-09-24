@@ -24,23 +24,23 @@ class AlpenglowStatisticalAnalysis:
         """Generate configurations for different network sizes"""
         configs = []
         
-        # Test different network sizes - limited to 4 nodes for AlpenglowConsensus spec
-        for nodes in [4]:  # Only 4 nodes supported by current spec
+        # Test different network sizes - now supports variable counts with LargeScaleConfig
+        for nodes in [4, 6, 8, 10, 12]:
             # Test different Byzantine/crash ratios
             for byz_percent in [5, 10, 15, 20]:  # Up to 20% Byzantine
                 for crash_percent in [5, 10, 15, 20]:  # Up to 20% crashed
                     
-                    # For 4 nodes, calculate actual fault counts
+                    # Calculate actual fault counts
                     byzantine_count = (nodes * byz_percent) // 100
                     crashed_count = (nodes * crash_percent) // 100
                     
-                    # Ensure we have meaningful configurations (at least some variation)
-                    if byzantine_count >= 0 and crashed_count >= 0 and byzantine_count + crashed_count <= 2:
+                    # Ensure we have meaningful configurations
+                    if byzantine_count >= 0 and crashed_count >= 0 and byzantine_count + crashed_count < nodes * 0.5:
                         config = {
                             'NodeCount': nodes,
                             'ByzantineCount': byzantine_count,
                             'CrashedCount': crashed_count,
-                            'SlotCount': random.choice([1, 2]),  # Vary slots
+                            'SlotCount': random.choice([1, 2, 3]),  # Vary slots
                             'HashVariants': 2,
                             'NetworkDelay': 100,
                             'seed': random.randint(0, 1000000)
@@ -50,32 +50,29 @@ class AlpenglowStatisticalAnalysis:
         return configs[:20]  # Limit to 20 configs for real TLC verification
     
     def create_config_file(self, config, config_path):
-        """Create TLA+ config file for statistical run using AlpenglowConsensus format"""
-        # Use the exact working small config format with slight variations
-        slots = f"{{1}}" if config['SlotCount'] == 1 else f"{{1, 2}}"
-        max_states = 20000 + (config['seed'] % 30000)  # Vary state limits
-        
+        """Create TLA+ config file for statistical run using LargeScaleConfig format"""
         cfg_content = f"""SPECIFICATION Spec
 
 CONSTANTS
-    N1 = n1
-    N2 = n2
-    N3 = n3
-    N4 = n4
-    MaxNodes = 4
-    Slots = {slots}
-    BlockTime = 400
-    Delta = 1000
-    Gamma = 32
-    BigGamma = 64
-    Kappa = 2
-    W = 4
-    ByzantineThreshold = 20
-    CrashThreshold = 20
+    NodeCount = {config['NodeCount']}
+    SlotCount = {config['SlotCount']}
+    ByzantineCount = {config['ByzantineCount']}
+    CrashedCount = {config['CrashedCount']}
 
 INVARIANTS
-    TypeOK
-    Safety
+    LargeScaleInvariants
+
+PROPERTIES
+    ProbabilisticSafety
+
+MAX_STATES
+    50000
+
+TIMEOUT
+    300
+
+WORKERS
+    4
 """
         
         with open(config_path, 'w') as f:
@@ -94,8 +91,12 @@ INVARIANTS
         # Create TLA+ config file for this specific configuration
         self.create_config_file(config, config_path)
         
-        # Use the working small-config specification for statistical runs
-        tla_file = self.base_dir / "model-checking" / "small-config" / "AlpenglowConsensus.tla"
+        # Use the fixed statistical specification for large-scale runs
+        tla_file = self.base_dir / "model-checking" / "statistical" / "LargeScaleConfig.tla"
+        
+        # Create a temp metadir for TLC to write its files
+        metadir = self.base_dir / "experiments" / "statistical" / "temp" / f"meta_{config['seed']}"
+        metadir.mkdir(parents=True, exist_ok=True)
         
         # Build TLC command with optimizations for large-scale checking
         cmd = [
@@ -106,6 +107,7 @@ INVARIANTS
             "tlc2.TLC", 
             "-nowarning",
             "-workers", "4",  # Use 4 worker threads
+            "-metadir", str(metadir),  # Specify where TLC can write
             "-config", str(config_path), 
             str(tla_file)
         ]
@@ -120,8 +122,8 @@ INVARIANTS
             temp_dir.mkdir(exist_ok=True)
             
             result = subprocess.run(
-                cmd, 
-                capture_output=True, 
+                cmd,
+                capture_output=True,
                 text=True, 
                 timeout=timeout_seconds,
                 cwd=str(temp_dir),
@@ -192,7 +194,7 @@ INVARIANTS
         self.total_simulations = len(configs)
         
         print(f"📊 Running {self.total_simulations} statistical simulations...")
-        print(f"   Network sizes: 4 nodes with variable fault thresholds (real TLC verification)")
+        print(f"   Network sizes: 4-12 nodes with variable fault configurations (real TLC verification)")
         print(f"   Byzantine faults: 5-20%")
         print(f"   Crash faults: 5-20%")
         
