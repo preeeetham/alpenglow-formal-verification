@@ -498,13 +498,13 @@ def main():
     # Clean up any existing TLC state directories
     runner.cleanup_tlc_directories()
     
-    # Run all experiments in order
+    # Run all experiments in order (Large-Scale Statistical last)
     experiments = [
         ("Syntax Validation", runner.run_syntax_validation),
         ("Small-Scale Verification", runner.run_small_scale_verification),
         ("Counterexample Analysis", runner.run_counterexample_analysis),
-        ("Statistical Analysis", runner.run_statistical_analysis),
         ("Performance Benchmarking", runner.run_benchmark_analysis),
+        ("Statistical Analysis", runner.run_statistical_analysis),
         ("Large-Scale Verification", runner.run_large_scale_verification)
     ]
     
