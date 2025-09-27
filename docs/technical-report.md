@@ -1,7 +1,5 @@
 # Alpenglow Formal Verification - Technical Report
 
-## Executive Summary
-
 This report presents the comprehensive formal verification of Solana's Alpenglow consensus protocol using TLA+ (Temporal Logic of Actions). We have successfully created machine-verifiable proofs for **all 16 critical theorems** from the Alpenglow whitepaper, demonstrating complete mathematical validation of the protocol's safety, liveness, resilience, and committee sampling properties.
 
 ### Verification Results Overview
@@ -25,21 +23,6 @@ This report presents the comprehensive formal verification of Solana's Alpenglow
 2. **Machine Verification**: All proofs are machine-checkable using industry-standard TLA+ tools
 3. **Complete Coverage**: 100% of whitepaper lemmas and theorems implemented and verified
 4. **Production Readiness**: Formal verification provides high confidence for implementation deployment
-
-### Impact
-
-This verification establishes the first complete formal proof of Alpenglow's correctness, providing mathematical certainty that the protocol maintains safety under Byzantine faults, achieves liveness under honest majority, and delivers optimal performance through its dual-path consensus mechanism.
-
-## Methodology
-
-### Framework Selection
-
-We selected **TLA+** as our formal verification framework based on:
-
-- **Industry Standard**: Used by AWS, Microsoft, and other distributed systems
-- **Expressiveness**: Rich temporal logic for consensus protocols  
-- **Tool Maturity**: TLC model checker with proven track record
-- **Academic Validation**: Extensive literature on consensus verification
 
 ### Specification Approach
 
@@ -337,8 +320,6 @@ Resilience Properties
 
 ## Complete Implementation Status
 
-### ✅ **FULLY IMPLEMENTED - 100% COVERAGE** 🎉
-
 **Safety Properties (100% Coverage):**
 - ✅ **Core Safety**: No conflicting finalizations
 - ✅ **Vote Exclusivity**: Finalization vs fallback exclusion
@@ -369,8 +350,6 @@ Resilience Properties
 
 ## Verification Coverage Summary
 
-**Overall Coverage**: **100%** of whitepaper lemmas implemented ✅
-
 - **Safety**: 100% coverage (8/8 major lemmas) ✅
 - **Liveness**: 100% coverage (6/6 major lemmas) ✅
 - **Committee Sampling**: 100% coverage (2/2 lemmas) ✅
@@ -387,7 +366,7 @@ This section summarizes key edge cases explicitly modeled/validated with pointer
 - Safety/forking
   - Conflicting finalizations per slot; certificate uniqueness; chain consistency; ancestor preservation
   - Where: `proofs/safety/SafetyProofs.tla`, `specs/tlaplus/AlpenglowConsensus.tla`, `specs/tlaplus/Properties.tla`
-  - Tests: `test_verification.py` (Safety), TLC runs in `run_experiments.py`
+  - Tests: `test_verification.py` (Safety), Core verification in `run_experiments.py`, Statistical analysis in `experiments/statistical/StatisticalAnalysis.py`
 
 - Voting transitions and certificates
   - NotarVote → FinalVote; Skip/Fallback; thresholds (80% fast, 60% notarize/finalize); Finalized ⇒ Notarized
@@ -426,7 +405,7 @@ This section summarizes key edge cases explicitly modeled/validated with pointer
   - TLC exhaustive (4–10 nodes); Monte Carlo (10–30 nodes by default)
   - Where: `model-checking/small-config/*`, `experiments/statistical/StatisticalAnalysis.py`
 
-Supporting scripts: `test_verification.py`, `run_experiments.py`, `experiments/counterexamples/CounterexampleAnalysis.py`
+Supporting scripts: `test_verification.py` (core verification), `run_experiments.py` (syntax, small-scale, benchmarks), `experiments/statistical/StatisticalAnalysis.py` (large-scale statistical), `experiments/counterexamples/CounterexampleAnalysis.py`
 
 ## Detailed Theorem Verification Results
 

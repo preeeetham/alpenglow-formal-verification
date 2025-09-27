@@ -188,8 +188,11 @@ If you encounter "ModuleNotFoundError" or "externally-managed-environment" error
 # Run the complete test suite
 python3 test_verification.py
 
-# Run all experiments
+# Run core experiments (syntax, small-scale verification, benchmarks)
 python3 run_experiments.py
+
+# Run statistical analysis separately (computationally intensive)
+python3 experiments/statistical/StatisticalAnalysis.py
 ```
 
 #### TLA+ Model Checking
@@ -208,7 +211,10 @@ java -cp tla2tools.jar tlc2.TLC -config model-checking/small-config/AlpenglowCon
 
 **3. Large-Scale Statistical Validation:**
 ```bash
-# Statistical model checking for larger configurations
+# Statistical model checking for larger configurations (use dedicated script)
+python3 experiments/statistical/StatisticalAnalysis.py
+
+# Or manually run TLC for individual configurations
 java -cp tla2tools.jar tlc2.TLC -config model-checking/statistical/LargeScaleConfig.cfg model-checking/statistical/LargeScaleConfig.tla
 ```
 
