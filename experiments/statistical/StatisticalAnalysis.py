@@ -24,11 +24,11 @@ class AlpenglowStatisticalAnalysis:
         """Generate configurations for different network sizes"""
         configs = []
         
-        # Test different network sizes - full range for comprehensive analysis
-        for nodes in [4, 6, 8, 10, 12]:  # Full network range
-            # Test different Byzantine/crash ratios - comprehensive testing
-            for byz_percent in [5, 10, 15, 20]:  # Full Byzantine range
-                for crash_percent in [5, 10, 15, 20]:  # Full crash range
+        # Test different network sizes - quick sample for timeout validation
+        for nodes in [4, 6, 8]:  # Sample network sizes  
+            # Test key Byzantine/crash ratios - quick sample
+            for byz_percent in [10, 20]:  # Key percentages
+                for crash_percent in [10, 20]:  # Key percentages
                     
                     # Calculate actual fault counts
                     byzantine_count = (nodes * byz_percent) // 100

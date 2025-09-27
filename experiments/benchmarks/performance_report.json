@@ -2,7 +2,7 @@
   "summary": {
     "total_specs_tested": 2,
     "total_states_explored": 362,
-    "total_runtime": 1.4390332698822021,
+    "total_runtime": 1.2241907119750977,
     "average_throughput": 0.0,
     "success_rate": 0.0
   },
@@ -16,7 +16,7 @@
       "deadlocks": 0,
       "spec_file": "MinimalAlpenglow.tla",
       "config_file": "MinimalAlpenglow.cfg",
-      "runtime_seconds": 0.6804013252258301,
+      "runtime_seconds": 0.5866758823394775,
       "exit_code": 12,
       "timeout": false
     },
@@ -29,7 +29,7 @@
       "deadlocks": 1,
       "spec_file": "AlpenglowConsensus.tla",
       "config_file": "AlpenglowConsensus.cfg",
-      "runtime_seconds": 0.7586319446563721,
+      "runtime_seconds": 0.6375148296356201,
       "exit_code": 11,
       "timeout": false
     }
